@@ -1,4 +1,6 @@
-ajm.createDomElement( "LINK" , {href:"core.css",rel:"stylesheet"} , document.head );
+ajm.createDomElement( "LINK"  , {href:"core.css",rel:"stylesheet"} , document.head );
+
+ajm.createDomElement( "SCRIPT", {src:"KEYS.js"}, document.head);
 ajm.createDomElement( "SCRIPT", {src:"three.js"},document.head,start);
 
 function start(){
@@ -21,12 +23,21 @@ var scene  = new THREE.Scene();
 
 	camera.position.z = 5;
 
+	document.addEventListener( "keydown" , function(e){
+		switch(e.keyCode){
+			case KEYS.KEY_A:
+				cube.rotation.z += 0.01;
+				break;
+			case "d":
+				cube.rotation.z -= 0.01;
+				break;
+		}	
+
+	});	
+
 	function render(t){
 		requestAnimationFrame(render);
-		cube.rotation.z += 0.01;
-		cube.rotation.y += 0.01;
 		renderer.render(scene,camera);
 	}
-
 	render();
 }
