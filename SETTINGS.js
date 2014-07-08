@@ -1,0 +1,5 @@
+var SETTINGS = {
+	ROTATION_SPEED:0.1
+};
+
+

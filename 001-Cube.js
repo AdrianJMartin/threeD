@@ -1,6 +1,7 @@
 ajm.createDomElement( "LINK"  , {href:"core.css",rel:"stylesheet"} , document.head );
 
-ajm.createDomElement( "SCRIPT", {src:"KEYS.js"}, document.head);
+ajm.createDomElement( "SCRIPT", {src:"KEYBOARD.js"}, document.head);
+ajm.createDomElement( "SCRIPT", {src:"SETTINGS.js"}, document.head);
 ajm.createDomElement( "SCRIPT", {src:"three.js"},document.head,start);
 
 function start(){
@@ -25,12 +26,25 @@ var scene  = new THREE.Scene();
 
 	document.addEventListener( "keydown" , function(e){
 		switch(e.keyCode){
-			case KEYS.KEY_A:
-				cube.rotation.z += 0.01;
+			case KEYBOARD.KEY_A:
+				cube.rotation.z += SETTINGS.ROTATION_SPEED;
 				break;
-			case "d":
-				cube.rotation.z -= 0.01;
+			case KEYBOARD.KEY_D:
+				cube.rotation.z -= SETTINGS.ROTATION_SPEED;
 				break;
+			case KEYBOARD.KEY_W:
+				cube.rotation.x -= SETTINGS.ROTATION_SPEED;
+				break;
+			case KEYBOARD.KEY_S:
+				cube.rotation.x += SETTINGS.ROTATION_SPEED;
+				break;
+			case KEYBOARD.KEY_E:
+				cube.rotation.y -= SETTINGS.ROTATION_SPEED;
+				break;
+			case KEYBOARD.KEY_Q:
+				cube.rotation.y += SETTINGS.ROTATION_SPEED;
+				break;
+			
 		}	
 
 	});	
