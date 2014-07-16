@@ -6,7 +6,7 @@ ajm.createDomElement( "SCRIPT", {src:"three.js"},document.head,start);
 
 function start(){
 	
-var scene  = new THREE.Scene();
+	var scene  = new THREE.Scene();
 
 	var camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight,0.1,1000);
 
@@ -16,6 +16,7 @@ var scene  = new THREE.Scene();
 	document.body.appendChild( renderer.domElement );
 
 	var geometry = new THREE.BoxGeometry(1,1,1);
+
 	var material = new THREE.MeshBasicMaterial( {color:0x00ff00});
 
 	var cube = new THREE.Mesh( geometry , material );
